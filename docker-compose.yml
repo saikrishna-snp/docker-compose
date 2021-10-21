@@ -4,7 +4,7 @@ services:
 
   node:
     container_name: webapp
-    image: nodeapp
+    image: nodeapp:2325af9111e057837e861100190f3f99f2022c13
       
   mongodb:
     container_name: database
