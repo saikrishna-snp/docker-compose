@@ -3,9 +3,9 @@ version: '3.7'
 services:
 
   node:
-    container_name: nodeapplication
+    container_name: webapp
     image: nodeapp
       
   mongodb:
-    container_name: mongodbapplication
+    container_name: database
     image: mongo
