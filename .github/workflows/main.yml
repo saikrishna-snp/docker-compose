@@ -25,5 +25,5 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: docker compose
-       run: |
-         docker compose up -d
+        run: |
+          docker compose up -d
