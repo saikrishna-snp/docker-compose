@@ -4,7 +4,7 @@ services:
 
   node:
     container_name: webapp
-    image: nodeapp:785586c00861c0679cbdae19a033391be84c9e4e:32931e980910c29c21fc763980ebf9485d023b2b:2325af9111e057837e861100190f3f99f2022c13
+    image: nodeapp:e17b81a837eff885dba6efac8eb297b3dcac964d:785586c00861c0679cbdae19a033391be84c9e4e:32931e980910c29c21fc763980ebf9485d023b2b:2325af9111e057837e861100190f3f99f2022c13
       
   mongodb:
     container_name: database
