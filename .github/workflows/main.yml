@@ -25,5 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: docker compose
-        run: |
-          docker compose up -d
+        run: docker compose up -d
+      - run: echo " Print a single environment variable (the commit SHA ) - ${{ github.sha }} "
+      - run: echo "Print all environment variables"
+      - run:  env
