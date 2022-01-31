@@ -29,3 +29,21 @@ jobs:
       - run: echo " Print a single environment variable (the commit SHA ) - ${{ github.sha }} "
       - run: echo "Print all environment variables"
       - run:  env
+      - name: Send mail
+        if: always()
+        uses: dawidd6/action-send-mail@v2
+        with:
+          # mail server settings
+          server_address: smtp-mail.outlook.com
+          server_port: 587
+          # user credentials
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # comma-separated string, send email to
+          to: saikrishna.g@snp.com
+          # from email name
+          from: workflow-notifications@github.com
