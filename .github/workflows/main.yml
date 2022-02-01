@@ -46,4 +46,4 @@ jobs:
           # comma-separated string, send email to
           to: saikrishna.g@snp.com
           # from email name
-          from: workflow-notifications@github.com
+          from: GitHub Workflow
