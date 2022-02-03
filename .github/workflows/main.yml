@@ -37,9 +37,9 @@ jobs:
       - run:  env
   notify:
     runs-on: ubuntu-latest
+    if: always()
     steps:
       - name: Send mail
-        if: always()
         uses: dawidd6/action-send-mail@v2
         with:
           # mail server settings
