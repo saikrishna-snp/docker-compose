@@ -5,16 +5,16 @@ services:
     image: phixiuspreprod.azurecr.io/phixius-platform-api:v3.26.5
 
   csp-api:
-    image: phixiuspreprod.azurecr.io/phixius-csp-api:v4.2.0
+    image: phixiuspreprod.azurecr.io/phixius-csp-api:v4.2.5
     
   csp-ui:
     image: phixiuspreprod.azurecr.io/phixius-ui:v4.1.0
 
   etl:
-    image: phixiuspreprod.azurecr.io/phixius-etl:v2.21.4
+    image: phixiuspreprod.azurecr.io/phixius-etl:v2.21.6
 
   directory-api:
-    image: phixiuspreprod.azurecr.io/phixius-directory-api:v3.17.2
+    image: phixiuspreprod.azurecr.io/phixius-directory-api:v3.17.9
 
   blockchain-api:
     image: phixiuspreprod.azurecr.io/phixius-blockchain:v4.23.0
