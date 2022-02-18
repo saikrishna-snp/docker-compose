@@ -2,7 +2,7 @@ version: '3'
 
 services:
   platform-api:
-    image: phixiuspreprod.azurecr.io/phixius-platform-api:v3.26.2
+    image: phixiuspreprod.azurecr.io/phixius-platform-api:v3.26.5
 
   csp-api:
     image: phixiuspreprod.azurecr.io/phixius-csp-api:v4.2.0
