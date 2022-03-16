@@ -18,6 +18,8 @@ jobs:
   # This workflow contains a single job called "build"
   notification-test:
     runs-on: ubuntu-latest
+    env:
+      DEV_STORAGE_ACCOUNT_ACCESS_KEY: ${{ secrets.DEV_STORAGE_ACCOUNT_ACCESS_KEY }}
     steps:
       - name: docker
         run: docker version
