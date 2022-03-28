@@ -31,6 +31,8 @@ jobs:
         run: |
           echo ${{ steps.ip.outputs.ipv4 }}
           echo ${{ steps.ip.outputs.ipv6 }}
+      - name: Print az CLI version
+        run: az version
       - name: 'Az CLI login'
         uses: azure/login@v1
         with:
