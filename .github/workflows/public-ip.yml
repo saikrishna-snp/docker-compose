@@ -41,3 +41,9 @@ jobs:
           xargs -I {} az storage account network-rule add -g virtual-machines --account-name $STORAGE_ACCOUNT --ip-address $PUBLIC_IP
         env:
           PUBLIC_IP: ${{ steps.ip.outputs.ipv4 }}
+      - name: Removing Public IP to Storage account firewall rules
+        run: |
+          STORAGE_ACCOUNT=$"(az storage account list -g virtual-machines --query "[].{name:name}" --output tsv)" |
+          xargs -I {} az storage account network-rule add -g virtual-machines --account-name $STORAGE_ACCOUNT --ip-address $PUBLIC_IP
+        env:
+          PUBLIC_IP: ${{ steps.ip.outputs.ipv4 }}
