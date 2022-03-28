@@ -37,3 +37,9 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Adding Public IP to Storage account firewall rules
+        run: |
+          az storage account list -g virtual-machines --query "[].{name:name}" --output tsv
+          env
+        env:
+          PUBLIC_IP: ${{ steps.ip.outputs.ipv4 }}
