@@ -31,15 +31,13 @@ jobs:
         run: |
           echo ${{ steps.ip.outputs.ipv4 }}
           echo ${{ steps.ip.outputs.ipv6 }}
-      - name: Print az CLI version
-        run: az version
       - name: 'Az CLI login'
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Adding Public IP to Storage account firewall rules
         run: |
-          az storage account list -g virtual-machines --query "[].{name:name}" --output tsv
-          env
+          STORAGE_ACCOUNT=$"(az storage account list -g virtual-machines --query "[].{name:name}" --output tsv)"
+          az storage account network-rule add -g virtual-machines --account-name $STORAGE_ACCOUNT --ip-address $PUBLIC_IP
         env:
           PUBLIC_IP: ${{ steps.ip.outputs.ipv4 }}
